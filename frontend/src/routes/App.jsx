@@ -24,7 +24,7 @@ const App = () => {
           <ProtectedRoute
             path="/evaluations"
             component={Evaluation}
-            roles={['ADMIN']}
+            roles={['EMPLOYEE']}
           />
         </Template>
       </Switch>

@@ -12,26 +12,29 @@ import LoginService from '../services/LoginService';
 
 const FormLogin = () => {
   const { login } = useAuth();
-  let history = useHistory();
+  const history = useHistory();
 
   const [loading, setLoading] = useState(false);
 
   const onFinish = (values) => {
-    login();
-    history.push('/employees');
-
-    /*
     setLoading(true);
     LoginService.login(values)
       .then((response) => {
         if (response) {
-          props.setToken(response.data.access_token);
-          window.location.href = '/movies';
+          const user = login(response.data.token);
+          setLoading(false);
+
+          if (user.role === 'ADMIN') {
+            history.push('/employees');
+          } else {
+            history.push('/evaluations');
+          }
         } else {
           setLoading(false);
         }
       })
       .catch((error) => {
+        console.log(error);
         if (error && error.response && error.response.status === 404) {
           toastr.error('Este usuario no existe.');
         } else {
@@ -40,8 +43,6 @@ const FormLogin = () => {
 
         setLoading(false);
       });
-   
-   */
   };
 
   return (

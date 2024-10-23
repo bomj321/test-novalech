@@ -10,17 +10,10 @@ export const AuthProvider = ({ children }) => {
   );
 
   const login = (token) => {
-    // Implement login logic here (e.g., API call)
-
-    localStorage.setItem(
-      'token',
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzE4ZTU3YjA4OTdjYTBjMDJhMTMzNzUiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3Mjk2OTUxNTh9.hAFgn6nfSNbpPrwhBuHZWgxXcYwNijsdJh-BzubwMhw'
-    );
-    const user = jwtDecode(
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzE4ZTU3YjA4OTdjYTBjMDJhMTMzNzUiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3Mjk2OTUxNTh9.hAFgn6nfSNbpPrwhBuHZWgxXcYwNijsdJh-BzubwMhw'
-    ); // decode your token here
-
+    localStorage.setItem('token', token);
+    const user = jwtDecode(token); // decode your token here
     setUser(user);
+    return user;
   };
 
   const logout = () => {
