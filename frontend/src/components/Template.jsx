@@ -78,7 +78,7 @@ const Template = ({ children }) => {
             {children}
           </Content>
           <Footer style={{ textAlign: 'center' }}>
-            Test Novalech @2024 Created by José ortega
+            Test Nolatech @2024 Created by José ortega
           </Footer>
         </Layout>
       </Layout>
