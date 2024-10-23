@@ -1,43 +1,31 @@
-# test-alicunda
-
-
+# test-novalech
 
 # Se usó MONGODB para el API
+
 # Endpoints
 
+# AUTH
 
-# BOOKS
+POST http://localhost:8081/api/auth/register
+POST http://localhost:8081/api/auth/login
 
-GET http://localhost:8081/api/books
+# USER
 
+GET http://localhost:8081/api/employees/
 
+# EVAlUATION
 
+POST http://localhost:8081/api/evaluations/
+GET http://localhost:8081/api/evaluations/
+GET http://localhost:8081/api/evaluations/:id
+GET http://localhost:8081/api/evaluations/employee/:id
+PATCH http://localhost:8081/api/evaluations/:id
+DELETE http://localhost:8081/api/evaluations/:id
 
-GET http://localhost:8081/api/book/id
+# FEEDBACK
 
+POST http://localhost:8081/api/feedback
 
+# REPORT
 
-POST http://localhost:8081/api/book
-
-{
-    "title": "string",
-    "chapters": 5,
-    "pages": 6,
-    "authors": ["64fadb35a8ec88fa60768820"] (Id del author)
-}
-
-# AUTHORS
-
-GET http://localhost:8081/api/authors
-
-
-POST http://localhost:8081/api/author
-
-{
-    "name": "hola1",
-    "books": ["64fadb35a8ec88fa60768820"] (Id del libro)
-}
-
-
-
-
+POST http://localhost:8081/api/reports/employee/:id
