@@ -4,6 +4,11 @@
 
 npm install
 BACKEND: npm run dev
+FRONTEND: npm run start
+
+# Consideraciones
+
+EL frontend está incompleto, Solo coloqué el login 2 visuales diferentes para un usuario tipo ADMIN y uno que no lo es.
 
 # Endpoints
 
