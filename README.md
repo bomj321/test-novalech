@@ -1,6 +1,9 @@
 # test-novalech
 
-# Se usó MONGODB para el API
+# Características
+
+npm install
+BACKEND: npm run dev
 
 # Endpoints
 
