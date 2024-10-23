@@ -4,7 +4,17 @@
 
 npm install
 BACKEND: npm run dev
+
+# ENV
+
+MONGO_URL=xxxx
+JWT_SECRET=xxx
+
 FRONTEND: npm run start
+
+# ENV
+
+Confugrar el archivo environments dentro de la carpeta libs
 
 # Consideraciones
 
