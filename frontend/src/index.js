@@ -1,17 +1,18 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App.tsx";
-import reportWebVitals from "./reportWebVitals";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { AuthProvider } from './AuthContext';
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+import { ConfigProvider } from 'antd';
+import esES from 'antd/es/locale/es_ES';
+import App from './routes/App';
+
+import './styles/GlobalStyles.css';
+
+ReactDOM.render(
+  <ConfigProvider locale={esES}>
+    <AuthProvider>
+      <App />
+    </AuthProvider>
+  </ConfigProvider>,
+  document.getElementById('app')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
